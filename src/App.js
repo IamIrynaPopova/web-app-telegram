@@ -1,24 +1,64 @@
-// import logo from './logo.svg';
-import './App.css';
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-        <h1>Hello world</h1>
-      </header>
+      <form className="form">
+        <div className="form__container">
+          <p className="form__title">Залиште свої дані, ми вам передзвонимо</p>
+          <ul>
+            <li className="form__item">
+              <label htmlFor="name">Ім'я</label>
+              <div className="form__wrap">
+                <input
+                  className="form__input"
+                  type="text"
+                  name="name"
+                  id="name"
+                />
+                <svg className="form__icon">
+                  <use href="#icon-person-form"></use>
+                </svg>
+              </div>
+            </li>
+            <li className="form__item">
+              <label htmlFor="tel">Телефон</label>
+              <div className="form__wrap">
+                <svg className="form__icon">
+                  <use href="icons#icon-phone-form"></use>
+                </svg>
+                <input className="form__input" type="tel" id="tel" name="tel" />
+              </div>
+            </li>
+            <li className="form__item">
+              <label htmlFor="email">Пошта</label>
+              <div className="form__wrap">
+                <svg className="form__icon">
+                  <use href="./icons.svg#icon-email-form"></use>
+                </svg>
+                <input
+                  className="form__input"
+                  type="email"
+                  id="email"
+                  name="email"
+                />
+              </div>
+            </li>
+            <li className="form__item">
+              <label htmlFor="feedback">Коментар</label>
+              <textarea
+                className="form__textarea"
+                name="feedback"
+                id="feedback"
+                placeholder="Введіть текст"
+              ></textarea>
+            </li>
+          </ul>
+          <button type="submit" className="button">
+            Відправити
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
