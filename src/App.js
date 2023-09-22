@@ -3,8 +3,9 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <form className="form">
-        <div className="form__container">
+      {" "}
+      <div className="container">
+        <form className="form">
           <p className="form__title">Залиште свої дані, ми вам передзвонимо</p>
           <ul>
             <li className="form__item">
@@ -57,8 +58,8 @@ function App() {
           <button type="submit" className="button">
             Відправити
           </button>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
   );
 }
