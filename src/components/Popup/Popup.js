@@ -1,9 +1,23 @@
+import { useState, useEffect } from "react";
 import css from "./Popup.module.css";
 import PopupIcon from "../Icons/PopupIcon";
 
-const Popup = () => {
+const Popup = ({ formSubmit, setFormSubmit }) => {
+  const [popupIsVisible, setPopupIsVisible] = useState(false);
+  const classPopup = popupIsVisible ? css.popup : `${css.popup} ${css.hidden}`;
+  console.log(classPopup);
+
+  useEffect(() => {
+    if (formSubmit) setPopupIsVisible(true);
+  }, [formSubmit]);
+
+  const onClickPopup = () => {
+    setPopupIsVisible(false);
+    setFormSubmit(false);
+  };
+
   return (
-    <div className={`${css.popup} ${css.hidden}`}>
+    <div className={classPopup}>
       <div className={css.popup__icon}>
         <PopupIcon />
       </div>
@@ -17,7 +31,9 @@ const Popup = () => {
             якнайшвидше
           </p>
         </div>
-        <button className={css.popup__button}>ОК</button>
+        <button className={css.popup__button} onClick={onClickPopup}>
+          ОК
+        </button>
       </div>
     </div>
   );

@@ -3,14 +3,15 @@ import PersonIcon from "../Icons/PepsonIcon";
 import PhoneIcon from "../Icons/PhoneIcon";
 import EmailIcon from "../Icons/EmailIcon";
 
-const Form = () => {
-
-  const onSubmitForm = (e) => { 
-console.log(e);
-  }
+const Form = ({ handleSubmit }) => {
+  const onSubmitForm = (e) => {
+    handleSubmit();
+    e.preventDefault();
+    e.target.reset();
+  };
   return (
     <div className={css.container}>
-      <form className={css.form}>
+      <form className={css.form} onSubmit={onSubmitForm}>
         <p className={css.form__title}>
           Залиште свої дані, ми вам передзвонимо
         </p>
@@ -67,7 +68,7 @@ console.log(e);
             ></textarea>
           </li>
         </ul>
-        <button type="submit" className={css.button} onSubmit={onSubmitForm}>
+        <button type="submit" className={css.button}>
           Відправити
         </button>
       </form>
