@@ -4,6 +4,10 @@ import PhoneIcon from "../Icons/PhoneIcon";
 import EmailIcon from "../Icons/EmailIcon";
 
 const Form = () => {
+
+  const onSubmitForm = (e) => { 
+console.log(e);
+  }
   return (
     <div className={css.container}>
       <form className={css.form}>
@@ -63,7 +67,7 @@ const Form = () => {
             ></textarea>
           </li>
         </ul>
-        <button type="submit" className={css.button}>
+        <button type="submit" className={css.button} onSubmit={onSubmitForm}>
           Відправити
         </button>
       </form>

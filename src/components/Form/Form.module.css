@@ -29,11 +29,12 @@
 
 .form {
   width: 100%;
+  position: relative;
   border-radius: 10px;
   box-sizing: border-box;
   margin: 0 auto;
   background-color: #ffffff;
-  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 4px 4px 20px #00e6ab1f;
   padding: 20px;
 }
 
@@ -73,21 +74,21 @@
 }
 
 .form__wrap:hover > .form__input {
-  border-color: #2196f3;
+  border-color: #25a182;
   cursor: pointer;
 }
 
 .form__wrap:hover > .form__icon {
-  fill: #2196f3;
+  fill: #25a182;
   cursor: pointer;
 }
 
 .form__wrap:focus-within > .form__input {
-  border-color: #2196f3;
+  border-color: #25a182;
 }
 
 .form__wrap:focus-within > .form__icon {
-  fill: #2196f3;
+  fill: #25a182;
 }
 
 .form__input {
@@ -132,18 +133,18 @@
 .button {
   display: block;
   margin: 0 auto;
-  padding: 10px 24px;
+  padding: 12px 50px;
   cursor: pointer;
-
+  border: none;
   flex-shrink: 0;
   border-radius: 4px;
-  background: #2196f3;
-  border-color: #2196f3;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+  background: #449d87;
+  border-color: #449d87;
+  box-shadow: 0px 30px 40px 0px #2c5b4f1f;
   color: aliceblue;
 }
 
 .button:hover {
-  background: #025eaa;
-  border-color: #025eaa;
+  background: #326a5c;
+  border-color: #326a5c;
 }

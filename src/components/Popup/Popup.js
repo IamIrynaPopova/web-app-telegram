@@ -3,7 +3,7 @@ import PopupIcon from "../Icons/PopupIcon";
 
 const Popup = () => {
   return (
-    <div className={css.popup}>
+    <div className={`${css.popup} ${css.hidden}`}>
       <div className={css.popup__icon}>
         <PopupIcon />
       </div>
