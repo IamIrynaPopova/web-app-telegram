@@ -7,14 +7,14 @@ function App() {
   const [formSubmit, setFormSubmit] = useState(false);
 
 
-  const handleSubmit = () => {
+  const handleSubmitForm = () => {
     setFormSubmit(true);
   
   };
 
   return (
     <div className="App">
-      <Form handleSubmit={handleSubmit} />
+      <Form onSubmit={handleSubmitForm} />
       <Popup formSubmit={formSubmit} setFormSubmit={setFormSubmit} />
     </div>
   );
