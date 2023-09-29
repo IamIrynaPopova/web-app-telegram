@@ -11,12 +11,17 @@ const Form = ({ onSubmit }) => {
     reset,
     formState: { errors },
   } = useForm();
-  console.log(errors);
+
+  const handleTelChange = (e) => {
+    const value = e.target.value;
+    if (value.length === 7) {
+      e.target.value = value + ")";
+    }
+  };
 
   const handleOnSubmit = (data, e) => {
     e.preventDefault();
-    console.log(e.target.elements.name.value);
-   reset();
+    reset();
     onSubmit();
     console.log(data);
   };
@@ -68,6 +73,7 @@ const Form = ({ onSubmit }) => {
                 id="tel"
                 name="tel"
                 defaultValue="+38("
+                onChange={handleTelChange}
               />
             </div>
             <p className={css.form__message}>{errors.tel?.message}</p>
