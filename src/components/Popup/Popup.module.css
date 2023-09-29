@@ -6,7 +6,7 @@
 
 .popup {
   width: 100%;
-  margin: 10px;
+  margin: 10px auto;
   position: absolute;
   top: 0;
   height: 535px;
