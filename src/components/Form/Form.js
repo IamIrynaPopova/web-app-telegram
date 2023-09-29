@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form";
 import css from "./Form.module.css";
-import PersonIcon from "../Icons/PepsonIcon";
+import PersonIcon from "../Icons/PersonIcon";
 import PhoneIcon from "../Icons/PhoneIcon";
 import EmailIcon from "../Icons/EmailIcon";
 
@@ -8,6 +8,7 @@ const Form = ({ onSubmit }) => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   console.log(errors);
@@ -15,7 +16,7 @@ const Form = ({ onSubmit }) => {
   const handleOnSubmit = (data, e) => {
     e.preventDefault();
     console.log(e.target.elements.name.value);
-    e.target.reset();
+   reset();
     onSubmit();
     console.log(data);
   };
@@ -31,7 +32,7 @@ const Form = ({ onSubmit }) => {
             <div className={css.form__wrap}>
               <input
                 {...register("name", {
-                  required: "Це обов'язкове поле",
+                  required: true,
                   minLength: {
                     value: 4,
                     message: "Має складатись з мінімум 4x літер",
@@ -79,7 +80,7 @@ const Form = ({ onSubmit }) => {
               </div>
               <input
                 {...register("email", {
-                  required: "email",
+                  required: true,
                   pattern: {
                     value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
                     message: "Введіть пошту в форматі example@gmail.com ",
