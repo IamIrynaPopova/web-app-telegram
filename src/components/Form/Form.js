@@ -14,8 +14,18 @@ const Form = ({ onSubmit }) => {
 
   const handleTelChange = (e) => {
     const value = e.target.value;
-    if (value.length === 7) {
-      e.target.value = value + ")";
+    const arrayValue = value.split("");
+
+    for (let i = 0; i < arrayValue.length; i++) {
+      if (arrayValue[7] === ")") {
+        arrayValue.splice(7, 1);
+        return arrayValue;
+      } else if (i === 7) {
+        arrayValue.splice(7, 0, ")");
+        const newValue = arrayValue.join("");
+        e.target.value = newValue;
+        return;
+      }
     }
   };
 

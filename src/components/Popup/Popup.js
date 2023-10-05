@@ -5,7 +5,6 @@ import PopupIcon from "../Icons/PopupIcon";
 const Popup = ({ formSubmit, setFormSubmit }) => {
   const [popupIsVisible, setPopupIsVisible] = useState(false);
   const classPopup = popupIsVisible ? css.popup : `${css.popup} ${css.hidden}`;
-  console.log(classPopup);
 
   useEffect(() => {
     if (formSubmit) setPopupIsVisible(true);
