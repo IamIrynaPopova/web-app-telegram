@@ -15,9 +15,13 @@ const Form = ({ onSubmit }) => {
   const handleTelChange = (e) => {
     const value = e.target.value;
     const arrayValue = value.split("");
+    const defaultValue = e.target.defaultValue;
+    console.log(defaultValue);
 
     for (let i = 0; i < arrayValue.length; i++) {
-      if (arrayValue[7] === ")") {
+      if (value === "" || arrayValue.length < 4) {
+        e.target.value = defaultValue;
+      } else if (arrayValue[7] === ")") {
         arrayValue.splice(7, 1);
         return arrayValue;
       } else if (i === 7) {
