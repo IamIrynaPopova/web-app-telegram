@@ -16,7 +16,6 @@ const Form = ({ onSubmit }) => {
     const value = e.target.value;
     const arrayValue = value.split("");
     const defaultValue = e.target.defaultValue;
-    console.log(defaultValue);
 
     for (let i = 0; i < arrayValue.length; i++) {
       if (value === "" || arrayValue.length < 4) {

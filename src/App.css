@@ -1,6 +1,13 @@
+
+
+.App {
+    height: var(--tg-viewport-height);
+}
+
 body {
   font-family: Roboto, sans-serif;
-  background-color: #b3c6c0;
+  /* background-color: #b3c6c0; */
+  background-color: var(--tg-theme-bg-color);
 }
 
 ul {
